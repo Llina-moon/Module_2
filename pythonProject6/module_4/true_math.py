@@ -6,3 +6,4 @@ def divide( first, second):
             return inf
 
 true_divide = divide(9,0)
+

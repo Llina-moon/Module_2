@@ -1,5 +1,9 @@
 def divide( first, second):
-    return first / second
+    try:
+        return first / second
+    except ZeroDivisionError:
+        return "Ошибка"
+
 
 
 c = divide(23,5)

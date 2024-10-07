@@ -34,38 +34,6 @@ class House :
             for i in range(1,new_floor + 1 ):
                 print(i)
 
-    def __eq__(self, other):
-        return (self.number_of_floors == other.number_of_floors)
-
-    def __lt__(self, other):
-        return (self.number_of_floors < other.number_of_floors)
-
-    def __le__(self, other):
-        return (self.number_of_floors <= other.number_of_floors)
-
-    def __gt__(self, other):
-        return (self.number_of_floors > other.number_of_floors)
-
-    def __ge__(self, other):
-        return (self.number_of_floors >= other.number_of_floors)
-
-    def __ne__(self, other):
-        return (self.number_of_floors != other.number_of_floors)
-
-    def __add__(self, value):
-         self.number_of_floors += value
-         return self
-
-    def __radd__(self, value):
-        self.number_of_floors += value
-        return self
-
-
-    def __iadd__(self, value):
-        self.number_of_floors += value
-        return self
-
-
 
 
 h1 = House('ЖК Эльбрус', 10)

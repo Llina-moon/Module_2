@@ -1,6 +1,4 @@
 
-
-
 class House :
 
     houses_history = []

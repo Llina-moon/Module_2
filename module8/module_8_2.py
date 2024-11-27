@@ -7,7 +7,7 @@ def personal_sum(numbers):
             numb += i
         except TypeError :
             incorrect_data += 1
-            print(f'Не корректный тип данных')
+            print(f'Некорректный тип данных для подсчёта суммы - {i}')
 
     return numb, incorrect_data
 
@@ -15,9 +15,6 @@ def personal_sum(numbers):
 
 def calculate_average(numbers):
     try:
-        if not isinstance(numbers,(list,tuple,set)):
-            raise TypeError('не является коллекцией')
-
         total_sum,incorrect_sum = personal_sum(numbers)
 
         if len(numbers) - incorrect_sum == 0:
@@ -37,4 +34,6 @@ print(f'Результат 1: {calculate_average("1, 2, 3")}') # Строка п
 print(f'Результат 2: {calculate_average([1, "Строка", 3, "Ещё Строка"])}') # Учитываются только 1 и 3
 print(f'Результат 3: {calculate_average(567)}') # Передана не коллекция
 print(f'Результат 4: {calculate_average([42, 15, 36, 13])}') # Всё должно работать
+
+
 

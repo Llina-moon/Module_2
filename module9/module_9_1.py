@@ -1,4 +1,7 @@
 def apply_all_func(int_list, *functions):
+    if not all(isinstance(item, (int, float)) for item in int_list):
+        raise ValueError("Список должен содержать только числа (int, float)")
+
     result ={}
     for func in functions:
         name = func.__name__

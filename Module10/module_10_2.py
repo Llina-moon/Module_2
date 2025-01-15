@@ -1,7 +1,7 @@
 import threading
 import time
 
-TOTAL_ENEMIES = 100
+
 
 class Knight(threading.Thread):
 
@@ -10,28 +10,32 @@ class Knight(threading.Thread):
         self.name = name
         self.power = power
         self.days = 0
+        self.TOTAL_ENEMIES = 100
 
     def run(self):
-        global TOTAL_ENEMIES
+
         print(f'{self.name}, на нас напали!"')
 
-        while TOTAL_ENEMIES > 0:
+        while self.TOTAL_ENEMIES > 0:
             time.sleep(1)
             self.days +=1
 
-            if TOTAL_ENEMIES > 0:
-                enemies_defeated = min(self.power,TOTAL_ENEMIES)
-                TOTAL_ENEMIES -= enemies_defeated
-                print(f'{self.name} сражается {self.days} день(дня)..., осталось {TOTAL_ENEMIES} воинов.')
+            if self.TOTAL_ENEMIES > 0:
+                enemies_defeated = min(self.power,self.TOTAL_ENEMIES)
+                self.TOTAL_ENEMIES -= enemies_defeated
+                print(f'{self.name} сражается {self.days} день(дня)..., осталось {self.TOTAL_ENEMIES} воинов.')
 
         print(f'{self.name} одержал победу спустя {self.days} дней(дня)!')
 
 
-first_knight = Knight('Sir Lancelot',6 )
-second_knight = Knight("Sir Galahad", 3)
+first_knight = Knight('Sir Lancelot',10 )
+second_knight = Knight("Sir Galahad", 20)
 
 first_knight.start()
 second_knight.start()
+
+first_knight.join()
+second_knight.join()
 
 
 
